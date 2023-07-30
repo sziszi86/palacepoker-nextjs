@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #121212;
+}
+
+.lottie svg{
+    width: 50px !important;
+    height: 50px !important;
+    cursor: pointer;
+}
