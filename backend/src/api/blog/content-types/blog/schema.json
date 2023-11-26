@@ -41,6 +41,9 @@
     },
     "date": {
       "type": "date"
+    },
+    "megjelenesdatuma": {
+      "type": "datetime"
     }
   }
 }

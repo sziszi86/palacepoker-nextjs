@@ -1,43 +1,63 @@
 "use client";
-import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-const Events = () => {
-    const [data, setData] = useState([]);
-    const [limit, setLimit] = useState(3);
+const Blogs = () => {
+  const [data, setData] = useState([]);
+  const [limit, setLimit] = useState(3);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await axios.get(
-                `http://localhost:1337/api/blogs?populate=*&pagination[start]=0&pagination[limit]=${limit}`
-            );
-            let response = data.data.data;
-            console.log(response);
-            setData(response);
-        };
-        fetchData();
-    }, [limit])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await axios.get(
+        `http://localhost:1337/api/blogs?populate=*&pagination[start]=0&pagination[limit]=${limit}`
+      );
+      let response = data.data.data;
+      console.log(response);
+      setData(response);
+    };
+    fetchData();
+  }, [limit]);
 
-    console.log(data);
-    return (
-        <div className="container mx-auto xl:max-w-[1180px] py-[40px] text-white">
-            <h1 className="text-start font-bold text-[24px] mb-5">Közelgő versenyeink</h1>
-            <div className="grid grid-cols-3 gap-[20px]">
-                {
-                    data?.map((item: any, index: number) => (
-                        <div className="cursor-pointer w-full border border-gray-700 rounded-md bg-gray-50 drop-shadow-[3px_4px_8px_rgba(108,122,137,1)]">
-                            <div className="h-[250px] w-full overflow-hidden rounded-2xl p-3">
-                                <img className="w-full h-[100%] object-cover hover:scale-[103%] transition-all duration-300 ease-in-out rounded-2xl" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} alt="" />
-                            </div>
-                            <div className="text-gray-700">
-                                <h2 className="pt-3 pb-2 pl-3.5">{ item.attributes.category}</h2>
-                            </div>
-                        </div>
-                    ))
-                }
+  const handleLimit = () => {
+    setLimit(limit + 3);
+  };
+
+  console.log(data);
+  return (
+    <div className="container mx-auto xl:max-w-[1180px] pt-[40px] text-white pb-[40px]">
+      <h1 className="text-start text-[24px] font-bold">Latest Post</h1>
+      <div className=" mt-[20px] grid grid-cols-3 gap-[20px]">
+        {data?.map((item: any, index: number) => (
+          <Link href={`${item.id}`}>
+            <div className="cursor-pointer w-full border border-[#2f3241]">
+              <div className="h-[240px] w-full overflow-hidden">
+                <img
+                  src={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
+                  alt=""
+                  className="w-full h-[100%] object-cover hover:scale-[109%] transition-all duration-300 ease-in-out"
+                />
+              </div>
+              <div className="pt-[15px] pl-[8px] pb-[5px]">
+                <h2 className="bg-[#4B6BFB]/[5%] inline-block text-[#4B6BFB] py-[2px] px-[4px] mb-[15px]">
+                  {item.attributes.category}
+                </h2>
+                <p className="text-[24px] font-bold">{item.attributes.title}</p>
+              </div>
             </div>
-        </div>
-    );
+          </Link>
+        ))}
+      </div>
+      <div className="flex items-center justify-center pt-[40px]">
+        <button
+          onClick={handleLimit}
+          className="h-[50px] w-[150px] border border-[#2f3241] text-[#97989F] hover:text-white"
+        >
+          View All Posts
+        </button>
+      </div>
+    </div>
+  );
 };
 
-export default Events;
+export default Blogs;
