@@ -13,10 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "text"
-    },
-    "category": {
-      "type": "string"
+      "type": "text",
+      "required": true
     },
     "description": {
       "type": "customField",
@@ -36,14 +34,24 @@
         "audios"
       ]
     },
-    "author": {
-      "type": "string"
-    },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
-    "megjelenesdatuma": {
-      "type": "datetime"
+    "bevezeto": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "kiemelt": {
+      "type": "boolean"
+    },
+    "versenytipusa": {
+      "type": "enumeration",
+      "enum": [
+        "cash-game",
+        "verseny"
+      ],
+      "default": "verseny"
     }
   }
 }
