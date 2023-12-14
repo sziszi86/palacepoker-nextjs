@@ -3,147 +3,151 @@
 @tailwind utilities;
 
 body {
-  background-color: #121212;
+    background-color: #121212;
 }
 
 .lottie svg {
-  width: 50px !important;
-  height: 50px !important;
-  cursor: pointer;
+    width: 50px !important;
+    height: 50px !important;
+    cursor: pointer;
 }
 
 #leiras span {
-  color: white !important;
+    color: white !important;
 }
 
 table {
-  padding: 15px !important;
-  border-color: white;
-  border-width: thin;
+    padding: 15px !important;
+    border-color: white;
+    border-width: thin;
 }
 
 tr {
-  padding: 15px !important;
+    padding: 15px !important;
 }
 
 .slick-next {
-  right: 25px !important;
-  top: 35% !important;
+    right: 25px !important;
+    top: 50% !important;
 }
 
 .slick-prev {
-  top: 35% !important;
-  left: 25px !important;
-  z-index: 9;
+    top: 50% !important;
+    left: 25px !important;
+    z-index: 9;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links li {
-  list-style: none;
-  margin: 0 12px;
+    list-style: none;
+    margin: 0 12px;
 }
 
 .nav-links li a {
-  position: relative;
-  color: #333;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 6px 0;
-  text-decoration: none;
+    position: relative;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
 }
 
 .nav-links li a:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  background: #34efdf;
-  border-radius: 12px;
-  transition: all 0.4s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #34efdf;
+    border-radius: 12px;
+    transition: all 0.4s ease;
 }
 
 .nav-links li a:hover:before {
-  width: 100%;
+    width: 100%;
 }
 
 .nav-links li.center a:before {
-  left: 50%;
-  transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links li.upward a:before {
-  width: 100%;
-  bottom: -5px;
-  opacity: 0;
+    width: 100%;
+    bottom: -5px;
+    opacity: 0;
 }
 
 .nav-links li.upward a:hover:before {
-  bottom: 0px;
-  opacity: 1;
+    bottom: 0px;
+    opacity: 1;
 }
 
 .nav-links li.forward a:before {
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
 }
 
 .nav-links li.forward a:hover:before {
-  transform: scaleX(1);
-  transform-origin: left;
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 figure {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 100%;
 }
 
 
 /* Médialekérdezés: Ha a kijelző szélessége kisebb, mint 600px, alkalmazzuk a mobil stílusokat */
 @media (max-width: 600px) {
-  /* Az összes table header (th) és table data (td) elem legyen blokk elem, hogy egymás alá kerüljenek */
-  th, td {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
+    /* Az összes table header (th) és table data (td) elem legyen blokk elem, hogy egymás alá kerüljenek */
+    th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
 
-  }
+    }
 
-  /* Egyesített stílusok a th és td elemekre, hogy azonos formázást használjanak */
-  th, td {
-    text-align: center;
-    vertical-align: bottom;
-    font-size: medium;
-  }
+    /* Egyesített stílusok a th és td elemekre, hogy azonos formázást használjanak */
+    th, td {
+        text-align: center;
+        vertical-align: bottom;
+        font-size: medium;
+    }
 
-  /* Állítsd be az oszlopok sorrendjét a táblázatban a megfelelő helyekre */
-  td:nth-child(1), th:nth-child(1) {
-    order: 1;
-  }
+    /* Állítsd be az oszlopok sorrendjét a táblázatban a megfelelő helyekre */
+    td:nth-child(1), th:nth-child(1) {
+        order: 1;
+    }
 
-  td:nth-child(2), th:nth-child(2) {
-    order: 2;
-  }
+    td:nth-child(2), th:nth-child(2) {
+        order: 2;
+    }
 
-  /* ... folytathatod az összes többi oszlop esetében */
-  /* Töröld el a szünetek sorait, ha nem kívánod megjeleníteni mobil nézetben */
-  td:nth-child(8), th:nth-child(8),
-  td:nth-child(11), th:nth-child(11),
-  td:nth-child(14), th:nth-child(14),
-  td:nth-child(17), th:nth-child(17),
-  td:nth-child(20), th:nth-child(20) {
-    display: none;
-  }
+    /* ... folytathatod az összes többi oszlop esetében */
+    /* Töröld el a szünetek sorait, ha nem kívánod megjeleníteni mobil nézetben */
+    td:nth-child(8), th:nth-child(8),
+    td:nth-child(11), th:nth-child(11),
+    td:nth-child(14), th:nth-child(14),
+    td:nth-child(17), th:nth-child(17),
+    td:nth-child(20), th:nth-child(20) {
+        display: none;
+    }
+}
+
+.slick-slide > div {
+    padding: 0 10px;
 }

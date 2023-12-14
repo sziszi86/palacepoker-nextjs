@@ -8,11 +8,11 @@ import axios from "axios";
 const Header = () => {
     const [data, setData] = useState<any>(null);
     const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
+        speed: 600,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
     };
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Header = () => {
 
     return (
         <div className="header">
-            <div className="overflow-hidden max-h-[490px] container mx-auto xl:max-w-[1180px] rounded-2xl">
+            <div className="overflow-hidden max-h-[735px] container mx-auto w-full rounded-2xl">
                 <Slider {...settings}>
                     {data?.map((item: any, index: number) => {
                         return (
