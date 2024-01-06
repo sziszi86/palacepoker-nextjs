@@ -112,3 +112,4 @@ exports
 *.cache
 dist
 .strapi-updater.json
+.vercel
