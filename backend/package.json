@@ -17,7 +17,8 @@
     "better-sqlite3": "8.0.1",
     "nova-publisher": "^1.1.7",
     "strapi-plugin-publisher": "^1.5.4",
-    "strapi-plugin-vercel-deploy": "^1.4.0"
+    "strapi-plugin-vercel-deploy": "^1.4.0",
+    "vercel": "^33.0.2"
   },
   "author": {
     "name": "A Strapi developer"
