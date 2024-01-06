@@ -4,7 +4,17 @@ module.exports = ({ env }) => ({
   },
   ckeditor5: {
     enabled: true
-    // resolve: "./src/plugins/strapi-plugin-ckeditor"
+  },
+  // resolve: "./src/plugins/strapi-plugin-ckeditor"
+  'vercel-deploy': {
+    enabled: true,
+    config: {
+      deployHook:
+        'https://api.vercel.com/v1/integrations/deploy/prj_EO46oJiLmvqfJhgqO4R8XHied3Rz/uWjQbwLFmA',
+      apiToken: 'y4IB0WDRW4XLplS9cAXBRKUd',
+      appFilter: 'pokeradmin',
+      roles: ['strapi-super-admin']
+    }
   },
   publisher: {
     enabled: true,

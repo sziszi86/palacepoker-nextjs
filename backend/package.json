@@ -11,15 +11,21 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
-    "@strapi/plugin-i18n": "4.12.0",
-    "@strapi/plugin-users-permissions": "4.12.0",
-    "@strapi/strapi": "4.12.0",
+    "@strapi/design-system": "^1.14.0",
+    "@strapi/plugin-i18n": "^4.16.2",
+    "@strapi/plugin-users-permissions": "^4.16.2",
+    "@strapi/strapi": "^4.16.2",
     "better-sqlite3": "8.0.1",
     "nova-publisher": "^1.1.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
     "strapi": "^3.6.11",
     "strapi-plugin-publisher": "^1.5.4",
+    "strapi-plugin-vercel": "^0.0.7",
     "strapi-plugin-vercel-deploy": "^1.4.0",
-    "vercel": "^33.0.2"
+    "styled-components": "^5.3.11",
+    "vercel": "^32.3.0"
   },
   "author": {
     "name": "A Strapi developer"
